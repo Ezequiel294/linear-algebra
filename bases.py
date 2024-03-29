@@ -4,7 +4,7 @@ import numpy as np
 def gram_schmidt(vectors):
     basis = []
     for v in vectors:
-        w = v - np.sum(np.dot(v, b) / np.dot(b, b) * b for b in basis)
+        w = v - sum(np.dot(v, b) / np.dot(b, b) * b for b in basis)
         if not np.allclose(w, 0):
             basis.append(w)
     return basis
