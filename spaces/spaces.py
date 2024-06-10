@@ -1,10 +1,12 @@
 import numpy as np
 
+
 def find_null_space(matrix):
     _, s, vh = np.linalg.svd(matrix)
     rank = np.sum(s > 1e-10)
     null_space = vh[rank:].T
     return null_space
+
 
 def find_column_space(matrix):
     _, s, vh = np.linalg.svd(matrix)
@@ -12,11 +14,13 @@ def find_column_space(matrix):
     column_space = vh[:rank].T
     return column_space
 
+
 def find_row_space(matrix):
     _, s, vh = np.linalg.svd(matrix)
     rank = np.sum(s > 1e-10)
     row_space = vh[:rank]
     return row_space
+
 
 numberRows = int(input("Enter the number of rows: "))
 numberColumns = int(input("Enter the number of columns: "))
@@ -30,4 +34,7 @@ for i in range(numberRows):
     print("\n")
 
 npMatrix = np.array(matrix)
-print(f"Null space: \n{find_null_space(npMatrix)}\n Column space: \n{find_column_space(npMatrix)}\n Row space: \n{find_row_space(npMatrix)}")
+print(
+    f"Null space: \n{find_null_space(npMatrix)}\n Column space: \n{find_column_space(npMatrix)}\n Row space: \n{find_row_space(npMatrix)}"
+)
+

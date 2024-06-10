@@ -1,6 +1,6 @@
-import numpy as np
 from fractions import Fraction
 
+import numpy as np
 
 n_rowsA = int(input("Enter the number of rows of matrix A: "))
 n_colsA = int(input("Enter the number of columns of matrix A: "))
@@ -15,13 +15,17 @@ print("\n")
 
 for i in range(n_rowsA):
     for j in range(n_colsA):
-        A[i][j] = Fraction(input(f"Enter the element matrix A[{i+1}][{j+1}] of matrix A: "))
+        A[i][j] = Fraction(
+            input(f"Enter the element matrix A[{i+1}][{j+1}] of matrix A: ")
+        )
 
 print("\n")
 
 for i in range(n_rowsB):
     for j in range(n_colsB):
-        B[i][j] = Fraction(input(f"Enter the element in matrix B[{i+1}][{j+1}] of matrix B: "))
+        B[i][j] = Fraction(
+            input(f"Enter the element in matrix B[{i+1}][{j+1}] of matrix B: ")
+        )
 
 result = np.dot(A, B)
 print(f"\n{result}")
